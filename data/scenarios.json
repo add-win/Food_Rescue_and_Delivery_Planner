@@ -1,0 +1,748 @@
+{
+  "normal": {
+    "description": "Normal case: sufficient capacity and time.",
+    "donations": [
+      {
+        "id": "D1",
+        "provider": "P1",
+        "food_type": "cooked",
+        "kg": 8,
+        "hours_to_expiry": 3
+      },
+      {
+        "id": "D2",
+        "provider": "P2",
+        "food_type": "vegetables",
+        "kg": 6,
+        "hours_to_expiry": 8
+      },
+      {
+        "id": "D3",
+        "provider": "P3",
+        "food_type": "dairy",
+        "kg": 5,
+        "hours_to_expiry": 4
+      },
+      {
+        "id": "D4",
+        "provider": "P4",
+        "food_type": "cooked",
+        "kg": 7,
+        "hours_to_expiry": 1.5
+      },
+      {
+        "id": "D5",
+        "provider": "P5",
+        "food_type": "bakery",
+        "kg": 4,
+        "hours_to_expiry": 10
+      }
+    ],
+    "kitchens": [
+      {
+        "id": "K1",
+        "location": "K1",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "bakery"
+        ],
+        "capacity_kg": 20,
+        "cold_storage": false
+      },
+      {
+        "id": "K2",
+        "location": "K2",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "dairy",
+          "bakery"
+        ],
+        "capacity_kg": 25,
+        "cold_storage": true
+      },
+      {
+        "id": "K3",
+        "location": "K3",
+        "needs": [
+          "cooked",
+          "vegetables"
+        ],
+        "capacity_kg": 15,
+        "cold_storage": false
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "V1",
+        "capacity_kg": 20,
+        "available": true,
+        "start": "DEPOT"
+      },
+      {
+        "id": "V2",
+        "capacity_kg": 20,
+        "available": true,
+        "start": "DEPOT"
+      }
+    ],
+    "roads": [
+      [
+        "DEPOT",
+        "P1",
+        2
+      ],
+      [
+        "DEPOT",
+        "P2",
+        3
+      ],
+      [
+        "DEPOT",
+        "P3",
+        4
+      ],
+      [
+        "DEPOT",
+        "P4",
+        2
+      ],
+      [
+        "DEPOT",
+        "P5",
+        3
+      ],
+      [
+        "P1",
+        "K1",
+        2
+      ],
+      [
+        "P1",
+        "K2",
+        3
+      ],
+      [
+        "P1",
+        "K3",
+        4
+      ],
+      [
+        "P2",
+        "K1",
+        2
+      ],
+      [
+        "P2",
+        "K2",
+        2
+      ],
+      [
+        "P2",
+        "K3",
+        3
+      ],
+      [
+        "P3",
+        "K1",
+        4
+      ],
+      [
+        "P3",
+        "K2",
+        2
+      ],
+      [
+        "P3",
+        "K3",
+        5
+      ],
+      [
+        "P4",
+        "K1",
+        3
+      ],
+      [
+        "P4",
+        "K2",
+        2
+      ],
+      [
+        "P4",
+        "K3",
+        4
+      ],
+      [
+        "P5",
+        "K1",
+        2
+      ],
+      [
+        "P5",
+        "K2",
+        3
+      ],
+      [
+        "P5",
+        "K3",
+        4
+      ],
+      [
+        "K1",
+        "K2",
+        2
+      ],
+      [
+        "K2",
+        "K3",
+        2
+      ],
+      [
+        "K1",
+        "K3",
+        4
+      ],
+      [
+        "DEPOT",
+        "K1",
+        4
+      ],
+      [
+        "DEPOT",
+        "K2",
+        5
+      ],
+      [
+        "DEPOT",
+        "K3",
+        6
+      ]
+    ],
+    "closed_roads": [],
+    "unavailable_vehicles": []
+  },
+  "tight": {
+    "description": "Tight case: limited vehicle capacity and a critical donation.",
+    "donations": [
+      {
+        "id": "D1",
+        "provider": "P1",
+        "food_type": "cooked",
+        "kg": 12,
+        "hours_to_expiry": 1
+      },
+      {
+        "id": "D2",
+        "provider": "P2",
+        "food_type": "vegetables",
+        "kg": 10,
+        "hours_to_expiry": 5
+      },
+      {
+        "id": "D3",
+        "provider": "P3",
+        "food_type": "dairy",
+        "kg": 8,
+        "hours_to_expiry": 3
+      },
+      {
+        "id": "D4",
+        "provider": "P4",
+        "food_type": "cooked",
+        "kg": 7,
+        "hours_to_expiry": 1.5
+      },
+      {
+        "id": "D5",
+        "provider": "P5",
+        "food_type": "bakery",
+        "kg": 6,
+        "hours_to_expiry": 7
+      }
+    ],
+    "kitchens": [
+      {
+        "id": "K1",
+        "location": "K1",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "bakery"
+        ],
+        "capacity_kg": 15,
+        "cold_storage": false
+      },
+      {
+        "id": "K2",
+        "location": "K2",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "dairy",
+          "bakery"
+        ],
+        "capacity_kg": 18,
+        "cold_storage": true
+      },
+      {
+        "id": "K3",
+        "location": "K3",
+        "needs": [
+          "cooked",
+          "vegetables"
+        ],
+        "capacity_kg": 12,
+        "cold_storage": false
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "V1",
+        "capacity_kg": 15,
+        "available": true,
+        "start": "DEPOT"
+      },
+      {
+        "id": "V2",
+        "capacity_kg": 15,
+        "available": true,
+        "start": "DEPOT"
+      }
+    ],
+    "roads": [
+      [
+        "DEPOT",
+        "P1",
+        2
+      ],
+      [
+        "DEPOT",
+        "P2",
+        3
+      ],
+      [
+        "DEPOT",
+        "P3",
+        4
+      ],
+      [
+        "DEPOT",
+        "P4",
+        2
+      ],
+      [
+        "DEPOT",
+        "P5",
+        3
+      ],
+      [
+        "P1",
+        "K1",
+        2
+      ],
+      [
+        "P1",
+        "K2",
+        3
+      ],
+      [
+        "P1",
+        "K3",
+        4
+      ],
+      [
+        "P2",
+        "K1",
+        2
+      ],
+      [
+        "P2",
+        "K2",
+        2
+      ],
+      [
+        "P2",
+        "K3",
+        3
+      ],
+      [
+        "P3",
+        "K1",
+        4
+      ],
+      [
+        "P3",
+        "K2",
+        2
+      ],
+      [
+        "P3",
+        "K3",
+        5
+      ],
+      [
+        "P4",
+        "K1",
+        3
+      ],
+      [
+        "P4",
+        "K2",
+        2
+      ],
+      [
+        "P4",
+        "K3",
+        4
+      ],
+      [
+        "P5",
+        "K1",
+        2
+      ],
+      [
+        "P5",
+        "K2",
+        3
+      ],
+      [
+        "P5",
+        "K3",
+        4
+      ],
+      [
+        "K1",
+        "K2",
+        2
+      ],
+      [
+        "K2",
+        "K3",
+        2
+      ],
+      [
+        "K1",
+        "K3",
+        4
+      ],
+      [
+        "DEPOT",
+        "K1",
+        4
+      ],
+      [
+        "DEPOT",
+        "K2",
+        5
+      ],
+      [
+        "DEPOT",
+        "K3",
+        6
+      ]
+    ],
+    "closed_roads": [],
+    "unavailable_vehicles": []
+  },
+  "changed": {
+    "description": "Changed case: one road is closed and one vehicle is unavailable.",
+    "donations": [
+      {
+        "id": "D1",
+        "provider": "P1",
+        "food_type": "cooked",
+        "kg": 8,
+        "hours_to_expiry": 3
+      },
+      {
+        "id": "D2",
+        "provider": "P2",
+        "food_type": "vegetables",
+        "kg": 6,
+        "hours_to_expiry": 8
+      },
+      {
+        "id": "D3",
+        "provider": "P3",
+        "food_type": "dairy",
+        "kg": 5,
+        "hours_to_expiry": 4
+      },
+      {
+        "id": "D4",
+        "provider": "P4",
+        "food_type": "cooked",
+        "kg": 7,
+        "hours_to_expiry": 1.5
+      },
+      {
+        "id": "D5",
+        "provider": "P5",
+        "food_type": "bakery",
+        "kg": 4,
+        "hours_to_expiry": 10
+      }
+    ],
+    "kitchens": [
+      {
+        "id": "K1",
+        "location": "K1",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "bakery"
+        ],
+        "capacity_kg": 20,
+        "cold_storage": false
+      },
+      {
+        "id": "K2",
+        "location": "K2",
+        "needs": [
+          "cooked",
+          "vegetables",
+          "dairy",
+          "bakery"
+        ],
+        "capacity_kg": 25,
+        "cold_storage": true
+      },
+      {
+        "id": "K3",
+        "location": "K3",
+        "needs": [
+          "cooked",
+          "vegetables"
+        ],
+        "capacity_kg": 15,
+        "cold_storage": false
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "V1",
+        "capacity_kg": 20,
+        "available": true,
+        "start": "DEPOT"
+      },
+      {
+        "id": "V2",
+        "capacity_kg": 20,
+        "available": false,
+        "start": "DEPOT"
+      }
+    ],
+    "roads": [
+      [
+        "DEPOT",
+        "P1",
+        2
+      ],
+      [
+        "DEPOT",
+        "P2",
+        3
+      ],
+      [
+        "DEPOT",
+        "P3",
+        4
+      ],
+      [
+        "DEPOT",
+        "P4",
+        2
+      ],
+      [
+        "DEPOT",
+        "P5",
+        3
+      ],
+      [
+        "P1",
+        "K1",
+        2
+      ],
+      [
+        "P1",
+        "K2",
+        3
+      ],
+      [
+        "P1",
+        "K3",
+        4
+      ],
+      [
+        "P2",
+        "K1",
+        2
+      ],
+      [
+        "P2",
+        "K2",
+        2
+      ],
+      [
+        "P2",
+        "K3",
+        3
+      ],
+      [
+        "P3",
+        "K1",
+        4
+      ],
+      [
+        "P3",
+        "K2",
+        2
+      ],
+      [
+        "P3",
+        "K3",
+        5
+      ],
+      [
+        "P4",
+        "K1",
+        3
+      ],
+      [
+        "P4",
+        "K2",
+        2
+      ],
+      [
+        "P4",
+        "K3",
+        4
+      ],
+      [
+        "P5",
+        "K1",
+        2
+      ],
+      [
+        "P5",
+        "K2",
+        3
+      ],
+      [
+        "P5",
+        "K3",
+        4
+      ],
+      [
+        "K1",
+        "K2",
+        2
+      ],
+      [
+        "K2",
+        "K3",
+        2
+      ],
+      [
+        "K1",
+        "K3",
+        4
+      ],
+      [
+        "DEPOT",
+        "K1",
+        4
+      ],
+      [
+        "DEPOT",
+        "K2",
+        5
+      ],
+      [
+        "DEPOT",
+        "K3",
+        6
+      ]
+    ],
+    "closed_roads": [
+      [
+        "P1",
+        "K2"
+      ]
+    ],
+    "unavailable_vehicles": [
+      "V2"
+    ]
+  },
+  "failure": {
+    "description": "Failure case: dairy donation but no kitchen has cold storage.",
+    "donations": [
+      {
+        "id": "D6",
+        "provider": "P6",
+        "food_type": "dairy",
+        "kg": 5,
+        "hours_to_expiry": 3
+      }
+    ],
+    "kitchens": [
+      {
+        "id": "K1",
+        "location": "K1",
+        "needs": [
+          "dairy",
+          "cooked"
+        ],
+        "capacity_kg": 10,
+        "cold_storage": false
+      },
+      {
+        "id": "K2",
+        "location": "K2",
+        "needs": [
+          "dairy"
+        ],
+        "capacity_kg": 10,
+        "cold_storage": false
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "V1",
+        "capacity_kg": 10,
+        "available": true,
+        "start": "DEPOT"
+      }
+    ],
+    "roads": [
+      [
+        "DEPOT",
+        "P6",
+        1
+      ],
+      [
+        "P6",
+        "K1",
+        1
+      ],
+      [
+        "P6",
+        "K2",
+        2
+      ],
+      [
+        "DEPOT",
+        "K1",
+        2
+      ],
+      [
+        "DEPOT",
+        "K2",
+        3
+      ]
+    ],
+    "closed_roads": [],
+    "unavailable_vehicles": []
+  }
+}
